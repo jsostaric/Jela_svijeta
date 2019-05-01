@@ -1,0 +1,16 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Category extends Model
+{
+   protected $table = 'categories';
+
+   public $translatedAttributes = ['title'];
+
+   public function meals() {
+       return $this->hasMany(Meal::class);
+   }
+}
