@@ -13,7 +13,7 @@ class MealTagTableSeeder extends Seeder
     {
         for ($i=1; $i <7 ; $i++) { 
             DB::table('meal_tag')->insert([
-                'meal_id' => rand(1,6),
+                'meal_id' => $i,
                 'tag_id' => rand(1,6)
             ]);
         }

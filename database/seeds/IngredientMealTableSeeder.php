@@ -12,10 +12,12 @@ class IngredientMealTableSeeder extends Seeder
     public function run()
     {
         for ($i=1; $i <7 ; $i++) { 
-            DB::table('ingredient_meal')->insert([
-                'ingredient_id' => rand(1,6),
-                'meal_id' => rand(1,6)
-            ]);
+            foreach(['en','hr'] as $locale){
+                DB::table('ingredient_meal')->insert([
+                    'ingredient_id' => rand(1,6),
+                    'meal_id' => $i
+                ]);
+            }   
         }
     }
 }
