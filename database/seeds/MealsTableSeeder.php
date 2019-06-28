@@ -12,8 +12,7 @@ class MealsTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();
-        $faker->addProvider(new \Faker\Provider\Food($faker));
+        
 
         for ($i=1; $i < 7 ; $i++) { 
             //$title = $faker->unique()->getTags;
@@ -29,7 +28,8 @@ class MealsTableSeeder extends Seeder
 
             foreach(['en', 'hr'] as $locale) {     
                if($locale == 'en') {
-                
+                $faker = Faker::create();
+                $faker->addProvider(new \Faker\Provider\Food($faker));
 
                 $title = $faker->unique()->finishedMeal;
                 $description = $faker->unique()->getDescriptions;
