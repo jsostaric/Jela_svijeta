@@ -15,10 +15,12 @@ class CreateMealsTable extends Migration
     {
         Schema::create('meals', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category')->unsigned();
+            $table->unsignedInteger('category_id')->nullable();
             $table->string('status');
             $table->timestamps();
             $table->softDeletes();
+
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
         });
 
         Schema::create('meal_translations', function(Blueprint $table) {

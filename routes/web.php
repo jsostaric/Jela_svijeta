@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
+Route::get('/', 'MealsController@index');
